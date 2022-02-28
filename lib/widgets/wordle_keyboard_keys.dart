@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+String returnKeyPressed(String k) {
+  return k;
+}
 
 class KeyCaps extends StatelessWidget {
   final String letter;
@@ -9,6 +14,7 @@ class KeyCaps extends StatelessWidget {
   Widget build(BuildContext context) {
     var height = 50.0;
     var width = 35.0;
+
     Widget keys;
     if (letter == ',') {
       width = 50;
@@ -34,16 +40,21 @@ class KeyCaps extends StatelessWidget {
       );
     }
 
-    return Container(
-      height: height,
-      width: width,
-      decoration: BoxDecoration(
-        border: Border.all(),
-        color: Colors.grey.shade800,
-        borderRadius: BorderRadius.circular(5.0),
-      ),
-      child: Center(
-        child: keys,
+    Color keyColor = Colors.grey.shade800;
+
+    return InkWell(
+      onTap: () {},
+      child: Container(
+        height: height,
+        width: width,
+        decoration: BoxDecoration(
+          border: Border.all(),
+          color: keyColor,
+          borderRadius: BorderRadius.circular(5.0),
+        ),
+        child: Center(
+          child: keys,
+        ),
       ),
     );
   }

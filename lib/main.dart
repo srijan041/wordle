@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod/riverpod.dart';
 import 'package:wordle/widgets/wordle_home_page.dart';
 
 void main() {
-  runApp(const HomePage());
+  runApp(
+    const ProviderScope(child: HomePage()),
+  );
 }
 
 class MyApp extends StatelessWidget {
