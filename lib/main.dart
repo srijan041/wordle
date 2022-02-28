@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:wordle/widgets/wordle_home_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const HomePage());
 }
 
 class MyApp extends StatelessWidget {
