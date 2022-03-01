@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:wordle/provider/game_state_provider.dart';
 
-class KeyCaps extends StatelessWidget {
+class KeyCaps extends ConsumerWidget {
   final String letter;
 
   const KeyCaps(this.letter, {Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     var height = 50.0;
     var width = 35.0;
 
@@ -39,7 +40,9 @@ class KeyCaps extends StatelessWidget {
     Color keyColor = Colors.grey.shade800;
 
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        ref.read(gameStateProvider.notifier).updateCurrentAttempt(letter);
+      },
       child: Container(
         height: height,
         width: width,

@@ -2,18 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 
-Future<List<String>> getWordsFromAssets()  async {
-  final data = await rootBundle.loadString("assets/words");
+Future<List<String>> loadWords(int wordLength) async {
+  final data = await rootBundle.loadString("assets/5-letters-words.json");
 
-  return jsonDecode(data);
-}
-
-class WOTD {
-  //word of the day, choosen word
-  String word = '';
-  int length = 0;
-
-  void wordRandomizer() {
-
-  }
+  return (jsonDecode(data) as List<dynamic>).cast<String>();
 }
