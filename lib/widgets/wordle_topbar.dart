@@ -5,11 +5,16 @@ AppBar topBar() {
       IconData(0xea06, fontFamily: 'MaterialIcons', matchTextDirection: true);
   return AppBar(
     centerTitle: true,
-    title: Text('WORDLE'),
+    title: const Text(
+      'WORDLE',
+      style: TextStyle(
+        fontSize: 25,
+      ),
+    ),
     actions: [
       IconButton(
         onPressed: () {},
-        icon: Icon(help_sharp),
+        icon: const Icon(help_sharp),
       ),
     ],
     backgroundColor: Colors.black,

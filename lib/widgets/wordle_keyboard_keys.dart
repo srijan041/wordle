@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-String returnKeyPressed(String k) {
-  return k;
-}
-
 class KeyCaps extends StatelessWidget {
   final String letter;
 
